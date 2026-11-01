@@ -1,0 +1,1017 @@
+{
+  "spec": {
+    "size": "1280x720",
+    "fps": 30,
+    "codec": "H.264 yuv420p +faststart, no audio",
+    "face_cam_box": "x >= 75% and y >= 75% of the frame kept empty"
+  },
+  "sources": {
+    "analysis": "results/cache/analysis_462a5efce6.jsonl",
+    "headline": "results/headline_numbers.json",
+    "showcase": "results/showcase/showcase.json",
+    "full_dists": "results/cache/showcase_full_dists.json"
+  },
+  "positions": [
+    {
+      "asset": "rating_sweep_running_example.mp4",
+      "game_id": "4hGkJ3rK",
+      "move_number": 20,
+      "fen": "r5k1/2rqbppp/5nn1/1p1p3P/1B6/2PQPN2/P4PP1/RNR3K1 b - - 0 20",
+      "my_move": "Nf8",
+      "stockfish_best": "Nf4",
+      "cp_loss": 113,
+      "maia_top1_by_rating": {
+        "1100": "Nxh5",
+        "1200": "Nxh5",
+        "1300": "Nxh5",
+        "1400": "Nf8",
+        "1500": "Bxb4",
+        "1600": "Bxb4",
+        "1700": "Bxb4",
+        "1800": "Nxh5",
+        "1900": "Nxh5"
+      },
+      "maia_top5_by_rating": {
+        "1100": [
+          [
+            "Nxh5",
+            0.2863
+          ],
+          [
+            "Nf8",
+            0.2578
+          ],
+          [
+            "Bxb4",
+            0.1896
+          ],
+          [
+            "Ne5",
+            0.1259
+          ],
+          [
+            "Nh8",
+            0.0285
+          ]
+        ],
+        "1200": [
+          [
+            "Nxh5",
+            0.2813
+          ],
+          [
+            "Nf8",
+            0.2581
+          ],
+          [
+            "Bxb4",
+            0.1941
+          ],
+          [
+            "Ne5",
+            0.1164
+          ],
+          [
+            "Nh8",
+            0.0669
+          ]
+        ],
+        "1300": [
+          [
+            "Nxh5",
+            0.4232
+          ],
+          [
+            "Nf8",
+            0.1783
+          ],
+          [
+            "Bxb4",
+            0.1461
+          ],
+          [
+            "Ne5",
+            0.1004
+          ],
+          [
+            "Nh8",
+            0.0598
+          ]
+        ],
+        "1400": [
+          [
+            "Nf8",
+            0.3638
+          ],
+          [
+            "Nxh5",
+            0.2067
+          ],
+          [
+            "Bxb4",
+            0.1977
+          ],
+          [
+            "Ne5",
+            0.1003
+          ],
+          [
+            "Nh8",
+            0.0426
+          ]
+        ],
+        "1500": [
+          [
+            "Bxb4",
+            0.4736
+          ],
+          [
+            "Nxh5",
+            0.3348
+          ],
+          [
+            "Nf8",
+            0.1104
+          ],
+          [
+            "Nh8",
+            0.0281
+          ],
+          [
+            "Ne5",
+            0.0207
+          ]
+        ],
+        "1600": [
+          [
+            "Bxb4",
+            0.3168
+          ],
+          [
+            "Nxh5",
+            0.2688
+          ],
+          [
+            "Nf8",
+            0.1538
+          ],
+          [
+            "Ne5",
+            0.1474
+          ],
+          [
+            "Nh8",
+            0.031
+          ]
+        ],
+        "1700": [
+          [
+            "Bxb4",
+            0.4371
+          ],
+          [
+            "Nf8",
+            0.2839
+          ],
+          [
+            "Nxh5",
+            0.1429
+          ],
+          [
+            "Ne5",
+            0.0488
+          ],
+          [
+            "Nh8",
+            0.03
+          ]
+        ],
+        "1800": [
+          [
+            "Nxh5",
+            0.6202
+          ],
+          [
+            "Bxb4",
+            0.2184
+          ],
+          [
+            "Nf8",
+            0.0749
+          ],
+          [
+            "Ne5",
+            0.0248
+          ],
+          [
+            "Qg4",
+            0.021
+          ]
+        ],
+        "1900": [
+          [
+            "Nxh5",
+            0.3942
+          ],
+          [
+            "Nf8",
+            0.2589
+          ],
+          [
+            "Bxb4",
+            0.2571
+          ],
+          [
+            "Ne5",
+            0.0338
+          ],
+          [
+            "Nh8",
+            0.012
+          ]
+        ]
+      },
+      "bars_source": "cached top 5",
+      "in_clean_set": true,
+      "why_chosen": "Running example: game 4hGkJ3rK, move 20."
+    },
+    {
+      "asset": "rating_sweep_agree.mp4",
+      "game_id": "8Qyoo5mL",
+      "move_number": 14,
+      "fen": "r1b3nr/ppNk1ppp/8/2b1p3/2BnP3/6B1/PP1K1PPP/3R2NR w - - 10 14",
+      "my_move": "Nxa8",
+      "stockfish_best": "Bxe5",
+      "cp_loss": 30,
+      "maia_top1_by_rating": {
+        "1100": "Nxa8",
+        "1200": "Nxa8",
+        "1300": "Nxa8",
+        "1400": "Nxa8",
+        "1500": "Nxa8",
+        "1600": "Nxa8",
+        "1700": "Nxa8",
+        "1800": "Nxa8",
+        "1900": "Nxa8"
+      },
+      "maia_top5_by_rating": {
+        "1100": [
+          [
+            "Nxa8",
+            0.9689
+          ],
+          [
+            "Bxe5",
+            0.02
+          ],
+          [
+            "Nd5",
+            0.0067
+          ],
+          [
+            "Nb5",
+            0.0015
+          ],
+          [
+            "Bxf7",
+            0.0013
+          ]
+        ],
+        "1200": [
+          [
+            "Nxa8",
+            0.9616
+          ],
+          [
+            "Bxe5",
+            0.0188
+          ],
+          [
+            "Nd5",
+            0.007
+          ],
+          [
+            "Bxf7",
+            0.0067
+          ],
+          [
+            "Nb5",
+            0.0019
+          ]
+        ],
+        "1300": [
+          [
+            "Nxa8",
+            0.9645
+          ],
+          [
+            "Bxe5",
+            0.02
+          ],
+          [
+            "Nd5",
+            0.0064
+          ],
+          [
+            "Bxf7",
+            0.0031
+          ],
+          [
+            "Nb5",
+            0.0019
+          ]
+        ],
+        "1400": [
+          [
+            "Nxa8",
+            0.9427
+          ],
+          [
+            "Bxe5",
+            0.0288
+          ],
+          [
+            "Nd5",
+            0.0182
+          ],
+          [
+            "Bxf7",
+            0.003
+          ],
+          [
+            "Nb5",
+            0.0024
+          ]
+        ],
+        "1500": [
+          [
+            "Nxa8",
+            0.9618
+          ],
+          [
+            "Bxe5",
+            0.0171
+          ],
+          [
+            "Nd5",
+            0.0104
+          ],
+          [
+            "Bxf7",
+            0.0065
+          ],
+          [
+            "Nb5",
+            0.0018
+          ]
+        ],
+        "1600": [
+          [
+            "Nxa8",
+            0.954
+          ],
+          [
+            "Bxe5",
+            0.0193
+          ],
+          [
+            "Nd5",
+            0.0135
+          ],
+          [
+            "Bxf7",
+            0.0066
+          ],
+          [
+            "Nb5",
+            0.0033
+          ]
+        ],
+        "1700": [
+          [
+            "Nxa8",
+            0.9635
+          ],
+          [
+            "Bxe5",
+            0.0206
+          ],
+          [
+            "Nd5",
+            0.006
+          ],
+          [
+            "Bxf7",
+            0.0038
+          ],
+          [
+            "Nb5",
+            0.0029
+          ]
+        ],
+        "1800": [
+          [
+            "Nxa8",
+            0.9839
+          ],
+          [
+            "Nd5",
+            0.0066
+          ],
+          [
+            "Bxe5",
+            0.0047
+          ],
+          [
+            "Bxf7",
+            0.0022
+          ],
+          [
+            "Nb5",
+            0.0017
+          ]
+        ],
+        "1900": [
+          [
+            "Nxa8",
+            0.9743
+          ],
+          [
+            "Nd5",
+            0.0166
+          ],
+          [
+            "Bxf7",
+            0.0031
+          ],
+          [
+            "Bxe5",
+            0.003
+          ],
+          [
+            "Nb5",
+            0.0019
+          ]
+        ]
+      },
+      "bars_source": "cached top 5",
+      "in_clean_set": true,
+      "why_chosen": "Rule: every Maia rating's top move = my move, my move != Stockfish's best, cp loss < 50; highest minimum probability across ratings (47 candidates in the clean set)."
+    },
+    {
+      "asset": "rating_sweep_mistake.mp4",
+      "game_id": "0hYnXRd5",
+      "move_number": 35,
+      "fen": "5k2/5pp1/3P4/6p1/8/6P1/p2R1PKP/r7 b - - 0 35",
+      "my_move": "Ke8",
+      "stockfish_best": "Rg1+",
+      "cp_loss": 290,
+      "maia_top1_by_rating": {
+        "1100": "Ke8",
+        "1200": "Ke8",
+        "1300": "Ke8",
+        "1400": "Ke8",
+        "1500": "Ke8",
+        "1600": "Ke8",
+        "1700": "Ke8",
+        "1800": "Ke8",
+        "1900": "Ke8"
+      },
+      "maia_top5_by_rating": {
+        "1100": [
+          [
+            "Ke8",
+            0.9726
+          ],
+          [
+            "Rb1",
+            0.0057
+          ],
+          [
+            "Rc1",
+            0.0041
+          ],
+          [
+            "Re1",
+            0.004
+          ],
+          [
+            "f5",
+            0.0038
+          ]
+        ],
+        "1200": [
+          [
+            "Ke8",
+            0.9705
+          ],
+          [
+            "Rb1",
+            0.0078
+          ],
+          [
+            "f6",
+            0.0061
+          ],
+          [
+            "Rd1",
+            0.0039
+          ],
+          [
+            "Rc1",
+            0.0036
+          ]
+        ],
+        "1300": [
+          [
+            "Ke8",
+            0.9866
+          ],
+          [
+            "Rb1",
+            0.0042
+          ],
+          [
+            "Rc1",
+            0.0018
+          ],
+          [
+            "f6",
+            0.0016
+          ],
+          [
+            "f5",
+            0.0016
+          ]
+        ],
+        "1400": [
+          [
+            "Ke8",
+            0.9852
+          ],
+          [
+            "Rb1",
+            0.0034
+          ],
+          [
+            "Rc1",
+            0.0029
+          ],
+          [
+            "f6",
+            0.0023
+          ],
+          [
+            "Re1",
+            0.0018
+          ]
+        ],
+        "1500": [
+          [
+            "Ke8",
+            0.9562
+          ],
+          [
+            "f6",
+            0.0148
+          ],
+          [
+            "Rb1",
+            0.0067
+          ],
+          [
+            "Rc1",
+            0.0052
+          ],
+          [
+            "f5",
+            0.0045
+          ]
+        ],
+        "1600": [
+          [
+            "Ke8",
+            0.9714
+          ],
+          [
+            "Re1",
+            0.0075
+          ],
+          [
+            "f6",
+            0.0045
+          ],
+          [
+            "Rd1",
+            0.0044
+          ],
+          [
+            "Rb1",
+            0.0033
+          ]
+        ],
+        "1700": [
+          [
+            "Ke8",
+            0.9813
+          ],
+          [
+            "f6",
+            0.0031
+          ],
+          [
+            "Re1",
+            0.0027
+          ],
+          [
+            "Rh1",
+            0.0026
+          ],
+          [
+            "Rc1",
+            0.0024
+          ]
+        ],
+        "1800": [
+          [
+            "Ke8",
+            0.9854
+          ],
+          [
+            "f6",
+            0.0037
+          ],
+          [
+            "Rb1",
+            0.0019
+          ],
+          [
+            "Rh1",
+            0.0016
+          ],
+          [
+            "f5",
+            0.0015
+          ]
+        ],
+        "1900": [
+          [
+            "Ke8",
+            0.9749
+          ],
+          [
+            "Rb1",
+            0.004
+          ],
+          [
+            "Re1",
+            0.0039
+          ],
+          [
+            "f6",
+            0.0038
+          ],
+          [
+            "Rd1",
+            0.0037
+          ]
+        ]
+      },
+      "bars_source": "full distribution",
+      "in_clean_set": true,
+      "why_chosen": "Showcase position 2 (final/showcase.py): cp loss >= 150 and Maia 1100's top choice, highest probability."
+    },
+    {
+      "asset": "rating_sweep_1100_vs_1900.mp4",
+      "game_id": "ewKB3ZfE",
+      "move_number": 23,
+      "fen": "r4rk1/2pn1pp1/p4q2/1p3b1Q/1P1Pp3/P3K3/1B4B1/R6R b - - 1 23",
+      "my_move": "Qh6+",
+      "stockfish_best": "Qh6+",
+      "cp_loss": 0,
+      "maia_top1_by_rating": {
+        "1100": "Qh6+",
+        "1200": "Bg6",
+        "1300": "Bg6",
+        "1400": "Bg6",
+        "1500": "Bg6",
+        "1600": "Rfe8",
+        "1700": "Bg6",
+        "1800": "Bg6",
+        "1900": "Bg6"
+      },
+      "maia_top5_by_rating": {
+        "1100": [
+          [
+            "Qh6+",
+            0.4524
+          ],
+          [
+            "g6",
+            0.1223
+          ],
+          [
+            "Bg6",
+            0.093
+          ],
+          [
+            "Rfe8",
+            0.0781
+          ],
+          [
+            "Bh7",
+            0.0522
+          ]
+        ],
+        "1200": [
+          [
+            "Bg6",
+            0.2413
+          ],
+          [
+            "g6",
+            0.1929
+          ],
+          [
+            "Rfe8",
+            0.1245
+          ],
+          [
+            "Rae8",
+            0.1178
+          ],
+          [
+            "Nb6",
+            0.0752
+          ]
+        ],
+        "1300": [
+          [
+            "Bg6",
+            0.3345
+          ],
+          [
+            "Qh6+",
+            0.1802
+          ],
+          [
+            "g6",
+            0.1007
+          ],
+          [
+            "Rfe8",
+            0.0791
+          ],
+          [
+            "Nb6",
+            0.06
+          ]
+        ],
+        "1400": [
+          [
+            "Bg6",
+            0.3745
+          ],
+          [
+            "Qg6",
+            0.1588
+          ],
+          [
+            "g6",
+            0.1183
+          ],
+          [
+            "Qh6+",
+            0.0945
+          ],
+          [
+            "Rfe8",
+            0.0824
+          ]
+        ],
+        "1500": [
+          [
+            "Bg6",
+            0.45
+          ],
+          [
+            "g6",
+            0.1202
+          ],
+          [
+            "Nb6",
+            0.104
+          ],
+          [
+            "Qg6",
+            0.0857
+          ],
+          [
+            "Rfe8",
+            0.078
+          ]
+        ],
+        "1600": [
+          [
+            "Rfe8",
+            0.2159
+          ],
+          [
+            "g6",
+            0.1861
+          ],
+          [
+            "Bg6",
+            0.1652
+          ],
+          [
+            "Qg6",
+            0.1591
+          ],
+          [
+            "Rae8",
+            0.072
+          ]
+        ],
+        "1700": [
+          [
+            "Bg6",
+            0.388
+          ],
+          [
+            "Qh6+",
+            0.1636
+          ],
+          [
+            "g6",
+            0.12
+          ],
+          [
+            "Rfe8",
+            0.0947
+          ],
+          [
+            "Qg6",
+            0.074
+          ]
+        ],
+        "1800": [
+          [
+            "Bg6",
+            0.3776
+          ],
+          [
+            "g6",
+            0.1818
+          ],
+          [
+            "Qg6",
+            0.1592
+          ],
+          [
+            "Rfe8",
+            0.0705
+          ],
+          [
+            "Qh6+",
+            0.061
+          ]
+        ],
+        "1900": [
+          [
+            "Bg6",
+            0.4464
+          ],
+          [
+            "Qg6",
+            0.153
+          ],
+          [
+            "Nb6",
+            0.1256
+          ],
+          [
+            "g6",
+            0.0903
+          ],
+          [
+            "Rfe8",
+            0.0693
+          ]
+        ]
+      },
+      "bars_source": "full distribution",
+      "in_clean_set": true,
+      "why_chosen": "The fig6 position (final/showcase.py): largest total-variation distance between the Maia 1100 and 1900 distributions among positions whose top move changes (TV = 0.58)."
+    }
+  ],
+  "files": {
+    "rating_sweep_running_example.mp4": "figures/video/rating_sweep_running_example.gif",
+    "rating_sweep_agree.mp4": "figures/video/rating_sweep_agree.gif",
+    "rating_sweep_mistake.mp4": "figures/video/rating_sweep_mistake.gif",
+    "rating_sweep_1100_vs_1900.mp4": "figures/video/rating_sweep_1100_vs_1900.gif",
+    "top1_vs_rating.mp4": "figures/video/top1_vs_rating.gif"
+  },
+  "reveal_lines": [
+    "Maia 1100's top move: Nxh5",
+    "Stockfish's best: Nf4",
+    "My move: Nf8 \u00b7 lost 1.1 pawns"
+  ],
+  "ffprobe": [
+    {
+      "file": "figures/video/rating_sweep_running_example.mp4",
+      "codec": "h264",
+      "profile": "High",
+      "pix_fmt": "yuv420p",
+      "size": "1280x720",
+      "fps": "30/1",
+      "duration_s": 11.2,
+      "frames": 336,
+      "audio": false,
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ],
+      "mb": 0.5,
+      "errors": []
+    },
+    {
+      "file": "figures/video/rating_sweep_agree.mp4",
+      "codec": "h264",
+      "profile": "High",
+      "pix_fmt": "yuv420p",
+      "size": "1280x720",
+      "fps": "30/1",
+      "duration_s": 11.2,
+      "frames": 336,
+      "audio": false,
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ],
+      "mb": 0.34,
+      "errors": []
+    },
+    {
+      "file": "figures/video/rating_sweep_mistake.mp4",
+      "codec": "h264",
+      "profile": "High",
+      "pix_fmt": "yuv420p",
+      "size": "1280x720",
+      "fps": "30/1",
+      "duration_s": 11.2,
+      "frames": 336,
+      "audio": false,
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ],
+      "mb": 0.41,
+      "errors": []
+    },
+    {
+      "file": "figures/video/rating_sweep_1100_vs_1900.mp4",
+      "codec": "h264",
+      "profile": "High",
+      "pix_fmt": "yuv420p",
+      "size": "1280x720",
+      "fps": "30/1",
+      "duration_s": 11.2,
+      "frames": 336,
+      "audio": false,
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ],
+      "mb": 0.6,
+      "errors": []
+    },
+    {
+      "file": "figures/video/top1_vs_rating.mp4",
+      "codec": "h264",
+      "profile": "High",
+      "pix_fmt": "yuv420p",
+      "size": "1280x720",
+      "fps": "30/1",
+      "duration_s": 7.5,
+      "frames": 225,
+      "audio": false,
+      "atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ],
+      "mb": 0.1,
+      "errors": []
+    }
+  ]
+}

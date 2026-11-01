@@ -1,0 +1,293 @@
+{
+  "best_rating": 1100,
+  "positions": [
+    {
+      "id": 1,
+      "slug": "disagreement",
+      "title": "Maia and Stockfish want completely different moves",
+      "fen": "r6k/ppp3p1/2np3p/2b5/2B1P2B/2N2r1q/PPP2P2/R2Q1RK1 w - - 0 15",
+      "game_id": "VQBP2Pua",
+      "move_number": 15,
+      "to_move": "White to move",
+      "source": "osovv game VQBP2Pua, move 15 (casual blitz game)",
+      "rating": 1100,
+      "maia_top3": [
+        [
+          "Bg3",
+          0.5347534753475347
+        ],
+        [
+          "Qxf3",
+          0.26002600260026004
+        ],
+        [
+          "Nd5",
+          0.0329032903290329
+        ]
+      ],
+      "sf_top3": [
+        [
+          "Be6",
+          "+1.85"
+        ],
+        [
+          "Qxf3",
+          "-5.30"
+        ],
+        [
+          "Ne2",
+          "-7.47"
+        ]
+      ],
+      "my_move": "Bg3",
+      "my_uci": "h4g3",
+      "p_my_move": 0.5347534753475347,
+      "rank_my_move": 1,
+      "cp_loss": 1185,
+      "sf_best": "Be6",
+      "maia_top": "Bg3",
+      "p_sf_best_by_rating": {
+        "1100": 0.012601260126012601,
+        "1200": 0.006400640064006401,
+        "1300": 0.0021997800219978004,
+        "1400": 0.019203840768153627,
+        "1500": 0.016798320167983202,
+        "1600": 0.005102040816326531,
+        "1700": 0.01219756048790242,
+        "1800": 0.012203661098329497,
+        "1900": 0.00739704118352659
+      },
+      "p_my_move_by_rating": {
+        "1100": 0.5347534753475347,
+        "1200": 0.5510551055105511,
+        "1300": 0.412058794120588,
+        "1400": 0.633626725345069,
+        "1500": 0.7221277872212778,
+        "1600": 0.8997599039615847,
+        "1700": 0.47170565886822635,
+        "1800": 0.5707712313694108,
+        "1900": 0.7540983606557377
+      },
+      "n_legal": 37,
+      "why": "Stockfish sees exactly one good move here, Be6, which keeps a clear advantage; its next-best choice is already about seven pawns worse. Every Maia model from 1100 to 1900 gives Be6 under 2%, while Maia 1100 put 53% on Bg3, the move I actually played, and Bg3 threw the game away."
+    },
+    {
+      "id": 2,
+      "slug": "mistake",
+      "title": "My mistake was Maia's first choice",
+      "fen": "5k2/5pp1/3P4/6p1/8/6P1/p2R1PKP/r7 b - - 0 35",
+      "game_id": "0hYnXRd5",
+      "move_number": 35,
+      "to_move": "Black to move",
+      "source": "osovv game 0hYnXRd5, move 35 (rated bullet game)",
+      "rating": 1100,
+      "maia_top3": [
+        [
+          "Ke8",
+          0.9725945189037808
+        ],
+        [
+          "Rb1",
+          0.005701140228045609
+        ],
+        [
+          "Rc1",
+          0.004100820164032806
+        ]
+      ],
+      "sf_top3": [
+        [
+          "Rg1+",
+          "-2.85"
+        ],
+        [
+          "g4",
+          "-0.65"
+        ],
+        [
+          "Ke8",
+          "+0.05"
+        ]
+      ],
+      "my_move": "Ke8",
+      "my_uci": "f8e8",
+      "p_my_move": 0.9725945189037808,
+      "rank_my_move": 1,
+      "cp_loss": 290,
+      "sf_best": "Rg1+",
+      "maia_top": "Ke8",
+      "p_sf_best_by_rating": {
+        "1100": 0.0008001600320064014,
+        "1200": 0.00020000000000000004,
+        "1300": 0.00030000000000000003,
+        "1400": 0.0006000600060005999,
+        "1500": 0.0026997300269973002,
+        "1600": 0.0023004600920184036,
+        "1700": 0.0008999100089991,
+        "1800": 0.0005,
+        "1900": 0.0006998600279944012
+      },
+      "p_my_move_by_rating": {
+        "1100": 0.9725945189037808,
+        "1200": 0.9705,
+        "1300": 0.9866,
+        "1400": 0.9851985198519851,
+        "1500": 0.9562043795620437,
+        "1600": 0.9713942788557712,
+        "1700": 0.9813018698130188,
+        "1800": 0.9854,
+        "1900": 0.9749050189962009
+      },
+      "n_legal": 13,
+      "why": "Maia 1100 was 97% sure I would play Ke8, and I did, even though it gave away almost three pawns compared with Stockfish's Rg1+. Every Maia rating agreed (96 to 99%), which is the clearest case of Maia predicting a human mistake rather than the best move."
+    },
+    {
+      "id": 3,
+      "slug": "engine_move",
+      "title": "I found the engine move that Maia did not expect",
+      "fen": "r2q1rk1/2pn1pp1/p3b3/1p1p3Q/1P1Pp2b/P2PP3/1B3PB1/R3K2R b KQ - 1 18",
+      "game_id": "ewKB3ZfE",
+      "move_number": 18,
+      "to_move": "Black to move",
+      "source": "osovv game ewKB3ZfE, move 18 (rated blitz game)",
+      "rating": 1100,
+      "maia_top3": [
+        [
+          "Nf6",
+          0.2642735726427357
+        ],
+        [
+          "Bf6",
+          0.2111788821117888
+        ],
+        [
+          "Bg5",
+          0.1242875712428757
+        ]
+      ],
+      "sf_top3": [
+        [
+          "Bxf2+",
+          "-2.20"
+        ],
+        [
+          "g6",
+          "-1.53"
+        ],
+        [
+          "Qg5",
+          "-1.28"
+        ]
+      ],
+      "my_move": "Bxf2+",
+      "my_uci": "h4f2",
+      "p_my_move": 0.08219178082191782,
+      "rank_my_move": 5,
+      "cp_loss": 0,
+      "sf_best": "Bxf2+",
+      "maia_top": "Nf6",
+      "p_sf_best_by_rating": {
+        "1100": 0.08219178082191782,
+        "1200": 0.08500850085008502,
+        "1300": 0.036096390360963904,
+        "1400": 0.25347465253474655,
+        "1500": 0.0725,
+        "1600": 0.1314868513148685,
+        "1700": 0.0381,
+        "1800": 0.28301509547135856,
+        "1900": 0.14422884576915382
+      },
+      "p_my_move_by_rating": {
+        "1100": 0.08219178082191782,
+        "1200": 0.08500850085008502,
+        "1300": 0.036096390360963904,
+        "1400": 0.25347465253474655,
+        "1500": 0.0725,
+        "1600": 0.1314868513148685,
+        "1700": 0.0381,
+        "1800": 0.28301509547135856,
+        "1900": 0.14422884576915382
+      },
+      "n_legal": 31,
+      "why": "Here I found Stockfish's best move, the bishop sacrifice Bxf2+, but Maia 1100 ranked it only fifth with 8%. It shows the other side of the coin: Maia predicts typical moves, so when I play better than usual, Maia is surprised too."
+    },
+    {
+      "id": 4,
+      "slug": "xent_example",
+      "title": "Cross-entropy worked example",
+      "fen": "rn1qk2r/pp3p2/2p1p1p1/3pP1Pp/3P3P/bPNQBN2/PnP2P2/1K1R3R w kq - 3 17",
+      "game_id": "42CHHlG2",
+      "move_number": 17,
+      "to_move": "White to move",
+      "source": "osovv game 42CHHlG2, move 17 (rated blitz game)",
+      "rating": 1100,
+      "maia_top3": [
+        [
+          "Qe2",
+          0.3441032309692908
+        ],
+        [
+          "Qd2",
+          0.31269380814244274
+        ],
+        [
+          "Rd2",
+          0.09512853856156848
+        ]
+      ],
+      "sf_top3": [
+        [
+          "Qe2",
+          "-1.98"
+        ],
+        [
+          "Qd2",
+          "-2.20"
+        ],
+        [
+          "Qf1",
+          "-2.34"
+        ]
+      ],
+      "my_move": "Qd2",
+      "my_uci": "d3d2",
+      "p_my_move": 0.31269380814244274,
+      "rank_my_move": 2,
+      "cp_loss": 22,
+      "sf_best": "Qe2",
+      "maia_top": "Qe2",
+      "p_sf_best_by_rating": {
+        "1100": 0.3441032309692908,
+        "1200": 0.2631263126312631,
+        "1300": 0.25920000000000004,
+        "1400": 0.4337433743374337,
+        "1500": 0.4654534546545345,
+        "1600": 0.4606,
+        "1700": 0.3708370837083708,
+        "1800": 0.4861513848615138,
+        "1900": 0.45694569456945694
+      },
+      "p_my_move_by_rating": {
+        "1100": 0.31269380814244274,
+        "1200": 0.33113311331133116,
+        "1300": 0.48460000000000003,
+        "1400": 0.28612861286128616,
+        "1500": 0.37736226377362264,
+        "1600": 0.368,
+        "1700": 0.45084508450845084,
+        "1800": 0.3548645135486451,
+        "1900": 0.32373237323732373
+      },
+      "n_legal": 34,
+      "why": "Maia 1100 split its prediction between Qe2 (34%) and Qd2 (31%); I played Qd2, so the loss is -log 0.313 = 1.16 nats even though Maia's top choice was a different move. The two moves are only 22 centipawns apart for Stockfish, so this is a fair, low-drama example of the loss at work."
+    }
+  ],
+  "sweep": {
+    "fen": "r4rk1/2pn1pp1/p4q2/1p3b1Q/1P1Pp3/P3K3/1B4B1/R6R b - - 1 23",
+    "game_id": "ewKB3ZfE",
+    "move_number": 23,
+    "my_move": "f6h6",
+    "sf_best": "f6h6",
+    "tv_1100_vs_1900": 0.5789599404386696
+  }
+}
