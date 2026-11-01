@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Engines and weights: not redistributed, see README "Setup"
+lc0/
+engines/
+weights/
+
+# Optional QA output of `python -m maia_study video --qa`
+figures/video/qa/
+
+# Local tool configuration
+CLAUDE.md
+.claude/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

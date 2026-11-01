@@ -1,0 +1,22 @@
+[project]
+name = "maia-study"
+version = "1.0.0"
+description = "How well does Maia predict one player's moves, compared with Stockfish?"
+requires-python = ">=3.12"
+license = "MIT"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+extend-exclude = ["lc0", "engines", "weights"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["B905"]  # zip() over sequences built to the same length
+
+[tool.ruff.lint.per-file-ignores]
+# matplotlib.use("Agg") must run before pyplot is imported
+"maia_study/{figures,showcase,video_assets}.py" = ["E402"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
