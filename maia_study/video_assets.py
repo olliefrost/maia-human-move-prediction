@@ -153,8 +153,8 @@ def pick_positions(running_move):
         )
     ]
 
-    # Maia and the player agree, Stockfish differs, and the move is not a mistake (< 50 cp), so this does not
-    # double as the mistake example. Rule: top-1 of EVERY Maia rating = the move played; pick the position with
+    # Maia and I agree, Stockfish differs, and my move is not a mistake (< 50 cp), so this does not
+    # double as the mistake example. Rule: top-1 of EVERY Maia rating = my move; pick the position with
     # the highest minimum probability across ratings (the most unanimous agreement).
     d = DF[(DF.move_uci != DF.sf_best) & (DF.cp_loss < 50)].copy()
     d = d[d[[f"top1_{rt}" for rt in RATINGS]].eq(d.move_uci, axis=0).all(axis=1)]

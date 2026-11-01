@@ -136,7 +136,7 @@ def select(df, best):
         "mistake",
         "My mistake was Maia's first choice",
     )
-    # 3 the player matched Stockfish but not Maia (and Stockfish's move clearly mattered)
+    # 3 I matched Stockfish but not Maia (and Stockfish's move clearly mattered)
     c3 = d[(d.move_uci == d.sf_best) & (d[f"top1_{b}"] != d.move_uci) & (d.sf_gap >= 50)]
     take(c3.sort_values(f"p_{b}"), "engine_move", "I found the engine move that Maia did not expect")
     # 4 clean worked example for cross-entropy: a sensible move, Maia's 2nd choice, mid probability
@@ -159,7 +159,7 @@ def arrows_for(board, maia_mv, sf_mv, my_mv, theme):
         arrows.append(chess.svg.Arrow(maia_mv.from_square, maia_mv.to_square, color=t["maia"] + "dd"))
     if my_mv not in (maia_mv, sf_mv):
         arrows.append(chess.svg.Arrow(my_mv.from_square, my_mv.to_square, color=t["me"] + "dd"))
-    # the played move's squares are always tinted orange, so it is visible even when it equals Maia or Stockfish
+    # my move's squares are always tinted orange, so it is visible even when it equals Maia or Stockfish
     fill[my_mv.from_square] = t["me"] + "66"
     fill[my_mv.to_square] = t["me"] + "99"
     return arrows, fill

@@ -1,4 +1,4 @@
-"""Interactive demo (tkinter): Maia vs Stockfish vs the player, one position at a time.
+"""Interactive demo (tkinter): Maia vs Stockfish vs me, one position at a time.
 
     python -m maia_study gui                    # step through data/positions.json
     python -m maia_study gui --pgn games.pgn    # step through every position of a PGN

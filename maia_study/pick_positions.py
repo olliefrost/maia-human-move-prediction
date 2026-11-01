@@ -1,6 +1,6 @@
 """Choose the 5 GUI demo positions where Maia and Stockfish disagree; writes data/positions.json.
 
-Candidates come from the saved analysis (the player's real games), endgames
+Candidates come from the saved analysis (my real games), endgames
 found in the same games, and two famous endgame studies. Each category is scored with a
 cheap prefilter, the shortlist is re-analysed with full Maia distributions and a deeper
 Stockfish search, and the position with the biggest Maia/Stockfish contrast wins.

@@ -1,6 +1,6 @@
 # Method details
 
-This document describes exactly what the code does. Settings live in `maia_study/config.py`.
+This document describes exactly what my code does. Settings live in `maia_study/config.py`.
 
 ## Maia
 
@@ -16,8 +16,8 @@ and moves made with under 30 seconds left.
 The nine networks are separate models, not one model with a rating input, so their predictions do not
 change smoothly from one rating to the next.
 
-This project never trains Maia. All the player's games (2022 to 2026) postdate Maia's training data, so
-every Maia number here is a test result.
+I never train Maia. All my games (2022 to 2026) postdate Maia's training data, so every Maia number here
+is a test result.
 
 ## How Maia's probabilities are read (`engines.py`, `Engines.maia_distribution`)
 
@@ -60,14 +60,14 @@ every Maia number here is a test result.
 
 - Stockfish 17.1 built from the official source (`ARCH=armv8-dotprod`), 4 threads, 128 MB hash.
 - The analysis uses depth 14 with MultiPV 3. That gives Stockfish's top-3 moves for the top-3 comparison,
-  and the player's move's eval whenever it is one of them. Otherwise the player's move is searched on
-  its own (`searchmoves`) to the same depth.
+  and my move's eval whenever it is one of them. Otherwise my move is searched on its own
+  (`searchmoves`) to the same depth.
 - Evals are from the mover's point of view. Mates are scored as ±10000 and every eval is capped at
   ±1000 cp, so one missed mate counts as at most a 2000 cp loss.
-- **Centipawn loss** = eval of Stockfish's best move minus eval of the move played (0 if they are the
+- **Centipawn loss** = eval of Stockfish's best move minus eval of the move I played (0 if they are the
   same move).
 - **Mistake** = centipawn loss ≥ 100 (one pawn) and not Stockfish's best move. The paper defines
-  blunders through a drop in win probability instead; the centipawn threshold is this project's choice.
+  blunders through a drop in win probability instead; the centipawn threshold is my choice.
   50 and 200 cp are reported as sensitivity checks.
 - Stockfish's evals of Maia's top-1 moves outside its own top 3 come from a separate top-up run
   (`topup.py`, 426 searches at the same depth). They are used only for the supplementary centipawn-loss
@@ -77,12 +77,12 @@ every Maia number here is a test result.
 
 ## Data and sampling
 
-- Games of `osovv` from the Lichess API (`/api/games/user/osovv`, no clocks, no evals). Lichess returns
-  404 unless the request has a descriptive `User-Agent`.
+- My games, from my Lichess account `osovv` via the Lichess API (`/api/games/user/osovv`, no clocks, no
+  evals). Lichess returns 404 unless the request has a descriptive `User-Agent`.
 - Kept: standard variant, normal starting position, not ultra-bullet or correspondence, no bot opponent.
   That leaves 78 of the 93 games.
-- Candidates: plies 16 to 70 where `osovv` was to move, not in check, with more than one legal move. That
-  gives 1413 candidates; 1000 are drawn at random (Python `random.Random(7)`). By time control: 621 blitz,
+- Candidates: plies 16 to 70 where I was to move, not in check, with more than one legal move. That
+  gives 1413 candidates; I draw 1000 at random (Python `random.Random(7)`). By time control: 621 blitz,
   252 bullet, 108 rapid, 19 classical.
 - The analysis cache is named by a hash of the sampling settings
   (`results/cache/analysis_462a5efce6.jsonl`). Re-sampling from the committed PGN gives the same 1000
@@ -101,5 +101,5 @@ because, once a game is decided, the moves say little about normal decision-maki
   (seed 7), because positions from the same game are correlated.
 - Paired top-1 comparisons on the same positions: exact two-sided McNemar test.
 - Rating trend: least-squares slope of top-1 against Maia rating, with a game-level bootstrap interval.
-- Player rating: 1359, the median of the player's in-game ratings across the games used (range 995 to
-  1748, mostly provisional). The Maia model closest to it is 1400.
+- My rating: 1359, the median of my in-game ratings across the games used (range 995 to 1748, mostly
+  provisional). The Maia model closest to it is 1400.

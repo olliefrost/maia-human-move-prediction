@@ -6,7 +6,7 @@ Reproduce every number and figure from the saved analysis (no engines needed):
 
 Full pipeline from scratch (needs lc0, the Maia weights and Stockfish; see README):
 
-    python -m maia_study fetch       # download the player's games from Lichess and anonymise them
+    python -m maia_study fetch       # download my games from Lichess and anonymise them
     python -m maia_study analyse     # run Maia 1100-1900 and Stockfish on 1000 sampled positions
     python -m maia_study topup       # Stockfish evals for Maia top-1 moves outside Stockfish's top 3
     python -m maia_study reproduce   # statistics, showcase positions, figures, video assets
@@ -117,7 +117,7 @@ def main(argv=None):
     )
     sub = ap.add_subparsers(dest="cmd", required=True, metavar="command")
 
-    sp = sub.add_parser("fetch", help="download and anonymise the player's Lichess games")
+    sp = sub.add_parser("fetch", help="download and anonymise my Lichess games")
     sp.add_argument("--user", default=C.PLAYER)
     sp.add_argument("--max-games", type=int, default=C.LICHESS_MAX_GAMES)
     sp.set_defaults(fn=cmd_fetch)

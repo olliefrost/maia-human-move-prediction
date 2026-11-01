@@ -1,6 +1,6 @@
-"""Load the player's Lichess games and sample positions from them.
+"""Load my Lichess games and sample positions from them.
 
-Positions are sampled where the player is to move, and each one carries the full move list from
+Positions are sampled where I am to move, and each one carries the full move list from
 the start of the game so that lc0 can be given the real history (see docs/method.md).
 """
 

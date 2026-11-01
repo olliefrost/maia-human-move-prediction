@@ -1,7 +1,7 @@
 [project]
 name = "maia-study"
 version = "1.0.0"
-description = "How well does Maia predict one player's moves, compared with Stockfish?"
+description = "How well does Maia predict my chess moves, compared with Stockfish?"
 requires-python = ">=3.12"
 license = "MIT"
 

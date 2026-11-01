@@ -10,12 +10,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 # ---------------------------------------------------------------- inputs
-PLAYER = "osovv"  # Lichess account whose moves are predicted
+PLAYER = "osovv"  # my Lichess account: the moves being predicted
 DATA_DIR = ROOT / "data"
 # This exact relative path is part of the analysis cache key (see analysis.py), so keep it.
 PGN = DATA_DIR / "lichess_osovv.pgn"
 DEMO_POSITIONS = DATA_DIR / "positions.json"  # positions shown in the GUI demo
-# The PGN was exported on 2026-10-28 and covers games from 2022-10-01 to 2026-10-28.
+# I exported the PGN on 2026-10-28; it covers my games from 2022-10-01 to 2026-10-28.
 GAMES_DATE_RANGE = ("2022-10-01", "2026-10-28")
 # Lichess returns 404 to API requests without a descriptive User-Agent.
 LICHESS_USER_AGENT = "maia-human-move-prediction/1.0 (university project)"
@@ -55,7 +55,7 @@ WEIGHTS_DIR = Path(os.environ.get("MAIA_WEIGHTS_DIR", ROOT / "weights"))
 ENGINES_DIR = ROOT / "engines"  # where setup_engines.py builds Stockfish
 
 # ---------------------------------------------------------------- clean analysis set
-MIN_PLY = 20  # drop the first 10 moves: opening/book play says little about the player
+MIN_PLY = 20  # drop the first 10 moves: opening/book play says little about my own decisions
 MIN_LEGAL = 2  # forced moves carry no information
 MAX_ABS_EVAL = 500  # drop positions already decided (|Stockfish eval before the move| > 5 pawns)
 
@@ -68,7 +68,7 @@ MISTAKE_SENSITIVITY = [50, 100, 200]
 EPS = 1e-4
 N_BOOT = 2000  # bootstrap resamples (whole games, see stats.py)
 
-# Median of the player's in-game ratings across the games used (995 to 1748, mostly provisional).
+# Median of my in-game ratings across the games used (995 to 1748, mostly provisional).
 MY_RATING = 1359
 
 # ---------------------------------------------------------------- outputs
@@ -91,7 +91,7 @@ POS_DIR = FIGURES / "positions"
 VIDEO_DIR = FIGURES / "video"
 
 # ---------------------------------------------------------------- colours
-# Colour-blind-safe categorical set: Maia blue, Stockfish green, the player orange.
+# Colour-blind-safe categorical set: Maia blue, Stockfish green, me orange.
 THEMES = {
     "light": {
         "bg": "#fcfcfb",

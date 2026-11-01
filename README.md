@@ -1,36 +1,37 @@
 # How well does Maia predict my moves?
 
 Maia is a set of chess networks trained to predict the move a human of a given rating will play,
-rather than the best move. This project tests how well Maia predicts the moves of one real player
-(the author, Lichess user `osovv`), and compares it with Stockfish, an engine built to find the best
-move. It is the code behind a mid-term video for COMS20018 (Introduction to AI). Every number and figure in the video can be reproduced from this repository.
+rather than the best move. In this project I test how well Maia predicts my own moves (my Lichess
+account is `osovv`), and compare it with Stockfish, an engine built to find the best move. It is the
+code behind my mid-term video for COMS20018 (Introduction to AI). Every number and figure in the video
+can be reproduced from this repository.
 
-**Question.** On positions from the player's own games, how often does each model's first choice match
-the move the player actually made? And when the player made a mistake, did the model see it coming?
+**Question.** On positions from my own games, how often does each model's first choice match the move I
+actually played? And when I made a mistake, did the model see it coming?
 
 ## Headline results
 
-527 positions from 67 rated and casual Lichess games (2022 to 2026). The player's median in-game rating
-is about 1359.
+527 positions from 67 of my rated and casual Lichess games (2022 to 2026). My median in-game rating is
+about 1359.
 
 | Model | Top-1 match | 95% CI | Top-3 match |
 |---|---:|---:|---:|
 | Maia 1100 | 50.9% (268/527) | [46.6, 55.1] | 78.0% |
-| Maia 1400 (nearest the player's rating) | 49.3% (260/527) | [45.1, 53.6] | 78.6% |
+| Maia 1400 (nearest my rating) | 49.3% (260/527) | [45.1, 53.6] | 78.6% |
 | Maia 1900 | 42.9% (226/527) | [38.7, 47.1] | 71.9% |
 | Stockfish 17.1 (depth 14) | 28.8% (152/527) | [25.1, 32.9] | 55.8% |
 | Random legal move (mean 1/n_legal) | 3.1% | | |
 
-- **Every Maia model predicts the player better than Stockfish.** Maia 1100 vs Stockfish on the same
+- **Every Maia model predicts my moves better than Stockfish.** Maia 1100 vs Stockfish on the same
   positions: exact McNemar p = 3e-17.
 - **Maia 1100 to 1400 are statistically tied** (1100 vs 1400: p = 0.46). Top-1 falls by about 0.9
   percentage points per 100 Maia rating points (95% CI -1.5 to -0.4).
 - **Maia 1100 and Stockfish agree with each other on 34.5%** of positions [30.6, 38.7].
 
-**Mistakes** (a move that lost at least 100 cp against Stockfish's best move): 146 of the 527 moves, from
+**Mistakes** (a move that lost at least 100 cp against Stockfish's best move): 146 of my 527 moves, from
 58 games.
 
-| On the player's 146 mistakes | Ranked the mistake first | Mistake in its top 3 |
+| On my 146 mistakes | Ranked the mistake first | Mistake in its top 3 |
 |---|---:|---:|
 | Maia 1100 | 26.7% [20.2, 34.4] | 60.3% [52.2, 67.9] |
 | Stockfish | 0% (by definition) | 19.2% [13.6, 26.3] |
@@ -43,13 +44,13 @@ All numbers: [`results/headline_numbers.json`](results/headline_numbers.json) an
 
 ## Method
 
-**Data.** Games of Lichess user `osovv` from 2022-10-01 to 2026-10-28, exported from the Lichess API
-without clock times and stored in [`data/lichess_osovv.pgn`](data/lichess_osovv.pgn) (opponent names
-replaced with `Opponent`). Standard-variant games are kept; ultra-bullet, correspondence, bot games and
-games from a custom starting position are excluded. That leaves 78 games.
+**Data.** My games from my Lichess account `osovv`, 2022-10-01 to 2026-10-28, exported from the Lichess
+API without clock times and stored in [`data/lichess_osovv.pgn`](data/lichess_osovv.pgn) (opponent names
+replaced with `Opponent`). I keep standard-variant games and exclude ultra-bullet, correspondence, bot
+games and games from a custom starting position. That leaves 78 games.
 
-**Sampling.** Every position from ply 16 to 70 (move 8 to 35) where the player was to move, was not in
-check and had more than one legal move: 1413 candidates. 1000 are drawn at random (seed 7).
+**Sampling.** Every position from ply 16 to 70 (move 8 to 35) where I was to move, was not in check and
+had more than one legal move: 1413 candidates. I draw 1000 of them at random (seed 7).
 
 **Filters** (applied in order, to every number and figure):
 
@@ -60,8 +61,8 @@ check and had more than one legal move: 1413 candidates. 1000 are drawn at rando
 | at least 2 legal moves | forced moves carry no information | 0 | 902 |
 | \|Stockfish eval before the move\| ≤ 500 cp | drop positions where the game is already decided | 375 | 527 |
 
-The 527 positions come from 67 games. The |eval| ≤ 500 cp rule and the 20-ply cut are this project's
-choices, not the paper's.
+The 527 positions come from 67 games. The |eval| ≤ 500 cp rule and the 20-ply cut are my choices, not
+the paper's.
 
 **Engines.**
 - **Maia 1100 to 1900**: the nine official Maia networks, run in lc0 with `go nodes 1` (one forward pass,
@@ -70,13 +71,13 @@ choices, not the paper's.
   position is sent with the full move list from the start of the game, so lc0 builds the history input
   from real previous positions rather than from a bare FEN.
 - **Stockfish 17.1**: depth 14, MultiPV 3, 4 threads, 128 MB hash. Evals are from the mover's point of
-  view and capped at ±1000 cp. If the player's move is not in Stockfish's top 3, it is searched
-  separately to the same depth.
+  view and capped at ±1000 cp. If my move is not in Stockfish's top 3, it is searched separately to the
+  same depth.
 
 **Metrics.**
-- *Top-1 match*: the model's most likely (Maia) or best (Stockfish) move equals the move played.
-- *Top-3 match*: the move played is among the model's top 3.
-- *Centipawn loss*: eval of Stockfish's best move minus eval of the move played, both at depth 14.
+- *Top-1 match*: the model's most likely (Maia) or best (Stockfish) move equals the move I played.
+- *Top-3 match*: the move I played is among the model's top 3.
+- *Centipawn loss*: eval of Stockfish's best move minus eval of the move I played, both at depth 14.
 - *Mistake*: centipawn loss ≥ 100 and not Stockfish's best move. 50 and 200 cp are reported as
   sensitivity checks. Stockfish's top-1 on mistakes is 0% by construction.
 - *Random baseline*: the mean of 1/(number of legal moves).
@@ -89,16 +90,16 @@ Full details of the probability extraction and engine settings: [`docs/method.md
 ## Limitations
 
 - **The paper's clock filter could not be applied.** Maia's test sets drop moves made with under 30
-  seconds left. The PGN was exported without clock times, so this filter is not applied here.
+  seconds left. I exported my games without clock times, so I could not apply this filter.
 - **Bullet games are included.** The paper's test sets exclude Bullet and HyperBullet games. Here, 131 of
-  the 527 positions come from bullet games. Removing them (396 positions from 51 games) gives similar
+  my 527 positions come from bullet games. Removing them (396 positions from 51 games) gives similar
   results (see above).
-- **Maia 1100 was highlighted after seeing the results.** It scored highest, so it is used in the
-  figures, but this was not decided in advance. Maia 1400, the model nearest the player's median rating
-  (about 1359), is therefore also reported, and 1100 to 1400 cannot be separated statistically. No Maia
+- **I highlighted Maia 1100 after seeing the results.** It scored highest, so I use it in the figures,
+  but I did not decide this in advance. I therefore also report Maia 1400, the model nearest my median
+  rating (about 1359), and 1100 to 1400 cannot be separated statistically. No Maia
   model below 1100 exists, so the best fit could be lower.
-- **One player, a few hundred positions.** The intervals are wide (about ±4 percentage points on top-1),
-  and the results describe how well Maia fits this player, not humans in general.
+- **One player (me), a few hundred positions.** The intervals are wide (about ±4 percentage points on
+  top-1), and the results describe how well Maia fits me, not humans in general.
 - **History length differs from the paper.** The paper describes giving Maia the previous 12 plies. lc0's
   input format holds the current position and the 7 before it, so here the network sees up to 7
   previous plies.
@@ -107,7 +108,7 @@ Full details of the probability extraction and engine settings: [`docs/method.md
 - **Stockfish is the measuring stick, not ground truth.** Centipawn losses and mistake labels depend
   on a depth-14 search. Multi-threaded Stockfish is also not deterministic, so a fresh engine run
   moves the numbers by a fraction of a point. The exact published numbers come from the saved analysis.
-- **Ratings are provisional and mixed.** The player's ratings in these games range from 995 to 1748
+- **My ratings are provisional and mixed.** My ratings in these games range from 995 to 1748
   across bullet, blitz and rapid.
 
 ## Repository layout
@@ -127,7 +128,7 @@ maia_study/            the code (one package, one command-line entry point)
   terminal_views.py    terminal tables for screenshots and recordings
   gui.py, pick_positions.py   interactive demo and its positions
   setup_engines.py     downloads the Maia weights and builds Stockfish
-data/                  the player's games (PGN) and the GUI demo positions
+data/                  my games (PGN) and the GUI demo positions
 results/               headline numbers, per-figure data (CSV), showcase cards, engine-output cache
 figures/charts/        fig1 to fig10, light and dark, PNG (1920x1080) and SVG
 figures/positions/     showcase boards and cards
@@ -210,7 +211,7 @@ them in order.
 | Top-1 match by Maia rating vs Stockfish | `figures/charts/fig1_match_by_rating_*`, `figures/video/top1_vs_rating.*` |
 | Mistakes: Maia vs Stockfish | `figures/charts/fig4_mistakes_*` |
 | Rating sweep, Maia 1100 vs 1900 | `figures/video/rating_sweep_1100_vs_1900.*`, `figures/charts/fig6_rating_sweep_*` |
-| Rating sweep where every Maia agrees with the player | `figures/video/rating_sweep_agree.*` |
+| Rating sweep where every Maia agrees with me | `figures/video/rating_sweep_agree.*` |
 | A mistake Maia expected | `figures/positions/pos_2_mistake_*`, `figures/video/rating_sweep_mistake.*` |
 | The engine move Maia did not expect | `figures/positions/pos_3_engine_move_*` |
 | Supplementary (cross-entropy, probabilities, toy model) | `fig2`, `fig3`, `fig5`, `fig7`, `fig8`, `fig9`, `fig10`; see [`docs/supplementary.md`](docs/supplementary.md) |
@@ -227,13 +228,13 @@ python -m maia_study reproduce
 engines. A rerun samples exactly the same 1000 positions (checked by the tests), but Stockfish's
 multi-threaded search can change a few evals.
 
-`python -m maia_study fetch` downloads the player's latest games from Lichess and anonymises them. Newer
+`python -m maia_study fetch` downloads my latest games from Lichess and anonymises them. Newer
 games change the sample, so use the committed PGN to reproduce the published results.
 
 ## Licences and data
 
 - **Code in this repository:** MIT ([LICENSE](LICENSE)).
-- **Game data:** the player's own games, exported through the
+- **Game data:** my own games, exported through the
   [Lichess API](https://lichess.org/api) and subject to the
   [Lichess terms of service](https://lichess.org/terms-of-service). Lichess publishes its game database
   under CC0. Opponent usernames are replaced with `Opponent`; Lichess game IDs are kept so each game can

@@ -284,7 +284,7 @@ def headline():
         mist[str(thr)] = entry
     H["mistakes"] = mist
 
-    # probability on the played move: overall, mistakes vs non-mistakes (at best-by-top1 rating)
+    # probability on my move: overall, mistakes vs non-mistakes (at best-by-top1 rating)
     rt = best_top1
     is_m = is_mistake(df)
     H["prob_on_my_move"] = {"rating": rt}
@@ -299,7 +299,7 @@ def headline():
     )
     H["prob_on_my_move"]["non_mistake_minus_mistake_mean"] = {"diff": est, "ci95": [lo, hi]}
 
-    # centipawn loss: the player, Maia top-1, Stockfish
+    # centipawn loss: me, Maia top-1, Stockfish
     cpl = {
         "me": boot_ci(df, lambda d: d.cp_loss.mean()),
         "stockfish": {"mean": 0.0, "note": "0 by definition: Stockfish's own best move is the measuring stick"},

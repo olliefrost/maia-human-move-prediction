@@ -1,8 +1,8 @@
 """The analysis pass: run every Maia model and Stockfish on every sampled position.
 
-Each record holds, for one position: the move the player made, each Maia model's top move,
-top 5 and the probability/rank it gave the player's move, Stockfish's top-3 moves with evals, and
-the centipawn loss of the player's move. Records are written to results/cache/analysis_<key>.jsonl,
+Each record holds, for one position: the move I played, each Maia model's top move, top 5 and the
+probability/rank it gave my move, Stockfish's top-3 moves with evals, and the centipawn loss of my
+move. Records are written to results/cache/analysis_<key>.jsonl,
 where <key> hashes the sampling settings, so a rerun with the same settings reuses the file.
 """
 

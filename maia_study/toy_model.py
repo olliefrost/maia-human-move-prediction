@@ -1,4 +1,4 @@
-"""Supplementary: a small move-prediction model trained on the player's games (figure 10).
+"""Supplementary: a small move-prediction model trained on my games (figure 10).
 
 Maia was trained by its authors on Lichess games up to November 2019, not on these games, so there is
 no Maia training curve on this data. This trains a small model with the same objective as Maia's
