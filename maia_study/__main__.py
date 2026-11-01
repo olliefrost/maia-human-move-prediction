@@ -149,11 +149,13 @@ def main(argv=None):
         ("pick-positions", cmd_pick_positions, "choose the GUI demo positions"),
         ("setup", cmd_setup, "download Maia weights and build Stockfish"),
     ):
-        sp = sub.add_parser(name, help=hlp, add_help=False)
-        sp.add_argument("rest", nargs=argparse.REMAINDER)
-        sp.set_defaults(fn=fn)
+        sub.add_parser(name, help=hlp, add_help=False).set_defaults(fn=fn, passthrough=True)
 
-    args = ap.parse_args(argv)
+    args, rest = ap.parse_known_args(argv)
+    if getattr(args, "passthrough", False):
+        args.rest = rest
+    elif rest:
+        ap.error(f"unrecognized arguments: {' '.join(rest)}")
     args.fn(args)
 
 
