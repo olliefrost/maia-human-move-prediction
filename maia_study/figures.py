@@ -78,7 +78,7 @@ def new_fig(theme, title, subtitle, rect=(0.11, 0.15, 0.86, None)):
 def save(fig, name, theme):
     C.FIG_DIR.mkdir(parents=True, exist_ok=True)
     fig.savefig(C.FIG_DIR / f"{name}_{theme}.png", dpi=DPI)
-    fig.savefig(C.FIG_DIR / f"{name}_{theme}.svg")
+    fig.savefig(C.FIG_DIR / f"{name}_{theme}.svg", metadata={"Date": None})  # no timestamp: reproducible files
     plt.close(fig)
 
 
