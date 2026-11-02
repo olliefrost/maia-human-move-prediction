@@ -9,6 +9,12 @@ can be reproduced from this repository.
 **Question.** On positions from my own games, how often does each model's first choice match the move I
 actually played? And when I made a mistake, did the model see it coming?
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="figures/charts/fig1_match_by_rating_dark.png">
+  <img alt="Top-1 match with my moves: every Maia model (43–51%) beats Stockfish (28.8%)"
+       src="figures/charts/fig1_match_by_rating_light.png" width="800">
+</picture>
+
 ## Headline results
 
 527 positions from 67 of my rated and casual Lichess games (2022 to 2026). My median in-game rating is
